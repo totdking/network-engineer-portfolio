@@ -22,7 +22,7 @@ Each lab project in this repository illustrates core networking competencies:
 
 | Lab Directory | Description | Key Focus Areas |
 |---|---|---|
-| [**`subnet-routing/`**](file:///Users/konquest/code_repo/network-portfolio/subnet-routing/README.md) | Subnet design & inter-subnet routing practice | Subnetting, Gateway configuration, Inter-segment routing, Packet Tracer (`.pkt`) |
+| [**`subnet-routing/`**](subnet-routing/README.md) | Subnet design & inter-subnet routing practice | Subnetting, Gateway configuration, Inter-segment routing, Packet Tracer (`.pkt`) |
 
 *(More labs covering switching, security, dynamic routing, and WAN technologies will be continuously added as I expand this portfolio.)*
 
