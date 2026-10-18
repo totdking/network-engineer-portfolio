@@ -6,7 +6,7 @@ This repository showcases a curated collection of hands-on **Cisco Packet Tracer
 
 ---
 
-## 🎯 About This Portfolio
+## About This Portfolio
 
 As someone looking to make an immediate impact on an engineering team, I believe the best way to demonstrate competence is through practical, working topologies and reproducible network designs. 
 
@@ -18,17 +18,18 @@ Each lab project in this repository illustrates core networking competencies:
 
 ---
 
-## 📁 Projects & Labs
+## Projects & Labs
 
 | Lab Directory | Description | Key Focus Areas |
 |---|---|---|
 | [**`subnet-routing/`**](subnet-routing/README.md) | Subnet design & inter-subnet routing practice | Subnetting, Gateway configuration, Inter-segment routing, Packet Tracer (`.pkt`) |
+| [**`multi-layer-switch-intervlan-routing/`**](multi-layer-switch-intervlan-routing/README.md) | Multi-Layer Switch (L3) Inter-VLAN routing & VLSM | MLS / L3 Switching, SVIs, 802.1Q Trunking, Routed Ports (`no switchport`), VLSM (`/28`, `/30`) |
 
 *(More labs covering switching, security, dynamic routing, and WAN technologies will be continuously added as I expand this portfolio.)*
 
 ---
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 - **Simulation & Lab Tools:** Cisco Packet Tracer, Wireshark, GNS3 / EVE-NG
 - **Hardware/Operating Systems:** Cisco IOS, Layer 2 / Layer 3 Switches, Routers
@@ -36,7 +37,7 @@ Each lab project in this repository illustrates core networking competencies:
 
 ---
 
-## 📬 Contact & Opportunities
+## Contact & Opportunities
 
 I am actively open to:
 - **Junior Network Engineer**

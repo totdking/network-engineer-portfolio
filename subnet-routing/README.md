@@ -4,7 +4,7 @@ A Cisco Packet Tracer practical lab demonstrating subnetting design, IP addressi
 
 ---
 
-## 🎯 Overview
+## Overview
 
 In modern enterprise networks, dividing a network into smaller subnets improves performance, enhances security segmentation, and optimizes address space allocation. This lab focuses on practicing IP subnetting and configuring routing mechanisms to enable seamless communication between different subnets.
 
@@ -16,13 +16,13 @@ In modern enterprise networks, dividing a network into smaller subnets improves 
 
 ---
 
-## 📂 Lab Files
+## Lab Files
 
-- [`subnet-inter-routing.pkt`](file:///Users/konquest/code_repo/network-portfolio/subnet-routing/subnet-inter-routing.pkt): Cisco Packet Tracer topology and configuration file.
+- [`subnet-inter-routing.pkt`](subnet-inter-routing.pkt): Cisco Packet Tracer topology and configuration file.
 
 ---
 
-## 🛠️ Prerequisites & Tools
+## Prerequisites & Tools
 
 - **Simulator:** [Cisco Packet Tracer](https://www.netacad.com/courses/packet-tracer) (v8.0+ recommended)
 - **Concepts Covered:**
@@ -33,10 +33,10 @@ In modern enterprise networks, dividing a network into smaller subnets improves 
 
 ---
 
-## 🚀 How to Run the Lab
+## How to Run the Lab
 
 1. Launch **Cisco Packet Tracer**.
-2. Open [`subnet-inter-routing.pkt`](file:///Users/konquest/code_repo/network-portfolio/subnet-routing/subnet-inter-routing.pkt) via `File > Open`.
+2. Open [`subnet-inter-routing.pkt`](subnet-inter-routing.pkt) via `File > Open`.
 3. Inspect device addressing and routing table entries:
    ```cisco
    enable
