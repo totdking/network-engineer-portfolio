@@ -20,19 +20,39 @@ Each lab project in this repository illustrates core networking competencies:
 
 ## Projects & Labs
 
-| Lab Directory | Description | Key Focus Areas |
-|---|---|---|
-| [**`subnet-routing/`**](subnet-routing/README.md) | Subnet design & inter-subnet routing practice | Subnetting, Gateway configuration, Inter-segment routing, Packet Tracer (`.pkt`) |
-| [**`multi-layer-switch-intervlan-routing/`**](multi-layer-switch-intervlan-routing/README.md) | Multi-Layer Switch (L3) Inter-VLAN routing & VLSM | MLS / L3 Switching, SVIs, 802.1Q Trunking, Routed Ports (`no switchport`), VLSM (`/28`, `/30`) |
-| [**`mini-wan-emulator/`**](mini-wan-emulator/README.md) | Mini WAN Emulator Core Mesh & Edge Interconnect | OSPF Area 0, WAN Emulation, Point-to-Point `/30` Subnets, Default Routing, DNS/ISP Server |
+### 1. [Mini WAN Emulator Core Mesh & Edge Interconnect](mini-wan-emulator/README.md)
+A multi-site WAN architecture emulating an ISP core network. It demonstrates OSPF Area 0 routing across a redundant triangular backbone, point-to-point `/30` serial/routed links, default routing at edge customer premises equipment (CPE), and centralized hosted ISP DNS services.
 
-*(More labs covering switching, security, dynamic routing, and WAN technologies will be continuously added as I expand this portfolio.)*
+[![Mini WAN Emulator Topology](mini-wan-emulator/image.png)](mini-wan-emulator/README.md)
+
+- **Key Focus Areas:** OSPF Area 0, WAN Core Mesh Emulation, Point-to-Point `/30` Subnets, Default Routing (`0.0.0.0/0`), Dynamic Failover, DNS/ISP Server Integration.
+- **Documentation & Lab:** [View Full Mini WAN Emulator Documentation & Guide →](mini-wan-emulator/README.md)
+
+---
+
+### 2. [Multi-Layer Switch (L3) Inter-VLAN Routing & VLSM](multi-layer-switch-intervlan-routing/README.md)
+An enterprise campus switching implementation demonstrating Layer 3 switching, Switch Virtual Interfaces (SVIs), routed ports (`no switchport`), 802.1Q trunking, and Variable Length Subnet Masking (VLSM) across departmental VLANs.
+
+[![Multi-Layer Switch Inter-VLAN Topology](multi-layer-switch-intervlan-routing/image.png)](multi-layer-switch-intervlan-routing/README.md)
+
+- **Key Focus Areas:** MLS / Layer 3 Switching, SVIs, 802.1Q Encapsulation, Routed Ports (`no switchport`), VLSM (`/28`, `/30`), Inter-VLAN Routing.
+- **Documentation & Lab:** [View Full Multi-Layer Switch Documentation & Guide →](multi-layer-switch-intervlan-routing/README.md)
+
+---
+
+### 3. [Subnet Design & Inter-Subnet Routing](subnet-routing/README.md)
+A foundational network engineering lab focused on IPv4 subnet allocation, classless IP calculations, default gateway setups, and multi-network segmentation routing.
+
+- **Key Focus Areas:** IPv4 Subnetting, Gateway Configuration, Inter-Segment Routing, Packet Tracer Topology (`.pkt`).
+- **Documentation & Lab:** [View Full Subnet Routing Documentation & Guide →](subnet-routing/README.md)
+
+---
 
 ---
 
 ## Tools & Technologies
 
-- **Simulation & Lab Tools:** Cisco Packet Tracer, Wireshark, GNS3 / EVE-NG
+- **Simulation & Lab Tools:** Cisco Packet Tracer.
 - **Hardware/Operating Systems:** Cisco IOS, Layer 2 / Layer 3 Switches, Routers
 - **Protocols & Concepts:** IPv4/IPv6, Subnetting (VLSM), VLANs/Trunking (802.1Q), Inter-VLAN Routing, Static & Dynamic Routing, DHCP, NAT, ACLs
 

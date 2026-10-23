@@ -213,6 +213,17 @@ Central-router# show ip route
 Home-router# show ip route
 ```
 
+#### OSPF Route Tables Across WAN Core Routers:
+
+- **ISP Core (`sh ip route`):**
+  ![ISP Core OSPF Route Table](isp-core-ospf.png)
+
+- **Edge Router 1 (`sh ip route`):**
+  ![Edge Router 1 OSPF Route Table](edge-router1-ospf.png)
+
+- **Edge Router 2 (`sh ip route`):**
+  ![Edge Router 2 OSPF Route Table](edge-router2-ospf.png)
+
 ### 3. Interface Status & IP Assignment
 ```cisco
 Router# show ip interface brief
@@ -230,6 +241,38 @@ Router# show ip interface brief
   ```
 - **WAN Link Failover Test:**
   Shut down interface `gig0/1` on `Edge router 1` (breaking link `30.0.0.0/30`). Run a continuous ping from Site A to Site B and observe OSPF rerouting traffic through `ISP core` (`20.0.0.1` -> `10.0.0.2`) with minimal packet drop.
+
+---
+
+## Troubleshooting and Security Review
+
+During lab implementation and validation, ping requests between remote branch endpoints and across the WAN core initially failed. A systematic diagnostic review revealed two primary routing configuration issues:
+
+### 1. Missing Default Static Routes on Customer Edge Routers (Central & Home)
+- **Symptom:** Hosts in Site A (`192.168.1.0/24`) were unable to reach hosts in Site B (`192.168.2.0/24`) or the external ISP DNS server (`40.0.0.2`).
+- **Root Cause:** Both the `Central router` and `Home router` (acting as CPE devices) lacked a quad-zero default static route (`0.0.0.0 0.0.0.0`). When packets with destination IPs outside the local LAN arrived at the customer router, the router had no matching entry in its routing table and dropped the packets (`unreachable destination`).
+- **Resolution:** Configured upstream default routes pointing to the respective provider edge router interfaces:
+  ```cisco
+  ! On Central Router:
+  Central-router(config)# ip route 0.0.0.0 0.0.0.0 50.0.0.1
+
+  ! On Home Router:
+  Home-router(config)# ip route 0.0.0.0 0.0.0.0 60.0.0.1
+  ```
+
+### 2. Missing OSPF Routes for Public Interconnect IP Subnets on Edge Routers
+- **Symptom:** Even after setting default routes on customer routers, end-to-end ping between the Central and Home routers remained unsuccessful.
+- **Root Cause:** In the provider edge routers (`Edge router 1` and `Edge router 2`), the public handoff subnets allocated to the customer edge connections (`50.0.0.0/30` on Edge Router 1 and `60.0.0.0/30` on Edge Router 2) were initially not advertised into the core OSPF Area 0 process. Because the intermediate core routers (`ISP core` and peer edge routers) had no route to these handoff subnets, return traffic pathing failed and ICMP replies could not be routed back to the initiating edge.
+- **Resolution:** Ensured that the edge routers had their handoff subnets included in the OSPF process (or properly redistributed/routed throughout the core), allowing all routers in the provider backbone to learn the complete path back to both customer endpoints:
+  ```cisco
+  ! Edge router 1 OSPF configuration:
+  Edge-router-1(config-router)# network 50.0.0.0 0.0.0.3 area 0
+
+  ! Edge router 2 OSPF configuration:
+  Edge-router-2(config-router)# network 60.0.0.0 0.0.0.3 area 0
+  ```
+
+---
 
 ---
 
