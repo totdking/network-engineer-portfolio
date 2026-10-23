@@ -24,6 +24,7 @@ Each lab project in this repository illustrates core networking competencies:
 |---|---|---|
 | [**`subnet-routing/`**](subnet-routing/README.md) | Subnet design & inter-subnet routing practice | Subnetting, Gateway configuration, Inter-segment routing, Packet Tracer (`.pkt`) |
 | [**`multi-layer-switch-intervlan-routing/`**](multi-layer-switch-intervlan-routing/README.md) | Multi-Layer Switch (L3) Inter-VLAN routing & VLSM | MLS / L3 Switching, SVIs, 802.1Q Trunking, Routed Ports (`no switchport`), VLSM (`/28`, `/30`) |
+| [**`mini-wan-emulator/`**](mini-wan-emulator/README.md) | Mini WAN Emulator Core Mesh & Edge Interconnect | OSPF Area 0, WAN Emulation, Point-to-Point `/30` Subnets, Default Routing, DNS/ISP Server |
 
 *(More labs covering switching, security, dynamic routing, and WAN technologies will be continuously added as I expand this portfolio.)*
 
